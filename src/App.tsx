@@ -5,16 +5,30 @@ import './App.css'
 
 // import { Button } from "./components/Atoms/button_react";
 
-import React, {useState} from 'react';
+// import React, {useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Company from './pages/Company';
 import NoMatch  from './pages/NoMatch';
 import Layout from './layouts/Default';
-import Button from './pages/Button';
-import Checkbox from './pages/Checkbox';
-import DirectionButton from './pages/DirectionButton';
+// import Button from './pages/Button';
+// import Checkbox from './pages/Checkbox';
+import BasicButton from './components/Atoms/BasicButton';
+import CheckBox from './components/Atoms/CheckBox';
+import RowRadioButtonsGroup from './components/Atoms/RowRadioButton';
+import SwitchLabel from './components/Atoms/SwitchLabels';
+import BasicTextField from './components/Atoms/BasicTextField'
+import BasicTooltip from './components/Atoms/BasicTooltip'
+import PaginationRounded from './components/Atoms/PaginationRounded'
+import CirclarIndeterminante from './components/Atoms/CirclarIndeterminante';
+import BasicMenu from './components/Atoms/BasicMenu'
+import BasicModal from './components/Atoms/BasicModal'
+import AlertDialog from './components/Atoms/AlertDialog'
+import AccordionExpandIcon from './components/Atoms/BasicAccordion';
+// import OutlinedCard from './components/Atoms/BasicCard';
+
+
 // import {useNavigate} from 'react-router-dom'
 
 
@@ -56,49 +70,80 @@ function App(){
         <li> <a href='/'>Home</a></li>
         <li> <a href='/about'>About</a></li>
         <li> <a href='/contact'>Contact</a></li>
-        {/* <li> <a href='/button'>button</a></li> */}
      </ul>
 
-     {/* // 課題1[ボタンコンポーネントの作成] */}
      <div>
-      <h1>ボタンコンポーネントの作成</h1>
-      <Button size="small" color="blue" />
-      <Button size="large" color="green" />
-      <Button size="small" color="red" />
+      <p>・ボタンコンポーネントの作成</p>
+      <BasicButton size="large" color="primary" />
     </div>
-
 
     <div>
-    <h1>チェックボックスコンポーネントの作成</h1>
-      <Checkbox size="small" color="blue" label="checkbox1" />
-      <Checkbox size="large" color="green" label="checkbox2" />
-      <Checkbox size="small" color="red" label="checkbox3" />
+      <p>・チェックボックスコンポーネントの作成</p>
+      <CheckBox size="small" color="primary" />
     </div>
 
-    {/* <div className="App">
-      <h1>Direction Selector</h1>
-      <DirectionRadioGroup /> {/* DirectionRadioGroupコンポーネントをここで呼び出し */}
-    {/* </div> */} 
+    <div>
+      <p>ラジオボタンコンポーネントの作成</p>
+      <RowRadioButtonsGroup size="large" color="primary" />
+    </div>
 
-<div>
-  <h1>Directionのところにある4種類のボタンを作成</h1>
-    <DirectionButton size="small" color="blue" direction="up" />
-    <DirectionButton size="large" color="green" direction="down" />
-    <DirectionButton size="small" color="red" direction="left" />
-    <DirectionButton size="large" color="pink" direction="right" />
-</div>
+    <div>
+      <p>スイッチコンポーネントの作成</p>
+      <SwitchLabel size="small" color="primary" />
+    </div>
 
-    
+    <div>
+      <p>テキストフィールドの作成</p>
+      <BasicTextField size='large' color='primary' />
+    </div>
 
-     <Routes>
+    <div>
+      <p>ツールチップ</p>
+      <BasicTooltip />
+    </div>
+    <div>
+      <p>ページネーション</p>
+        <PaginationRounded />
+    </div>
+
+    <div>
+      <BasicModal/>
+    </div>
+
+    <div>
+      <p>ベーシックカード</p>
+    </div>
+
+    <div>
+      <CirclarIndeterminante />
+    </div>
+
+    <div>
+      <p>menu</p>
+      <BasicMenu />
+    </div>
+
+    <div>
+      <BasicModal />
+    </div>
+
+    <div>
+      <AlertDialog />
+    </div>
+
+    <div>
+      <AccordionExpandIcon />
+    </div>
+
+
+    <Routes>
       <Route element={<Layout/>}>
           <Route path='/' element={<Home/>} />
           <Route path='about' element={<About/>} />
           <Route path='company' element={<Company/>} />
           <Route path='/*' element={<NoMatch/>} />
 
-          <Route path='button' element={<Button/>}/>
-          <Route path='checkbox' element={<Checkbox />} />
+          {/* <Route path='button' element={<Button/>}/> */}
       </Route>
      </Routes>
   </div>
