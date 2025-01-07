@@ -26,7 +26,7 @@ import BasicMenu from './components/Atoms/BasicMenu'
 import BasicModal from './components/Atoms/BasicModal'
 import AlertDialog from './components/Atoms/AlertDialog'
 import AccordionExpandIcon from './components/Atoms/BasicAccordion';
-// import OutlinedCard from './components/Atoms/BasicCard';
+import OutlinedCard from './components/Atoms/BasicCard';
 
 
 // import {useNavigate} from 'react-router-dom'
@@ -112,6 +112,7 @@ function App(){
 
     <div>
       <p>ベーシックカード</p>
+      <OutlinedCard />
     </div>
 
     <div>
