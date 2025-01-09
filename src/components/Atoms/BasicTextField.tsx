@@ -13,13 +13,14 @@ export default function BasicTextField (props: BasicTextFieldProps) {
   return(
     <Box
     component ='form'
-    sx={{ '& > :not(style)': { m: 1, width: '25ch' } }}
+    sx={{ '& > :not(style)': { m: 1, width: '500px' } }}
+    // 25ch
     noValidate
     autoComplete="off"
     >
-      <TextField id='outlined-basic' label='Outlined' variant='outlined' size={size} color={color}/>
-      <TextField id='filled-basic' label='Filled' variant='filled' size={size} color={color}/>
-      <TextField id='standard-basic' label='Standard' variant='standard' size={size} color={color}/>
+      <TextField id='outlined-basic' label='' variant='outlined' size={size} color={color}/>
+      {/* <TextField id='filled-basic' label='Filled' variant='filled' size={size} color={color}/>
+      <TextField id='standard-basic' label='Standard' variant='standard' size={size} color={color}/> */}
     </Box>
   )
 }

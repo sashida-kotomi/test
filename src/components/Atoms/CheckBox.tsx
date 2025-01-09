@@ -13,9 +13,12 @@ export default function CheckBox(props: CheckBoxProps) {
   const { size, color } = props;
   return (
     <div>
-    <FormControlLabel control={<Checkbox defaultChecked size={size} color={color} />} label="Label" />
-    <FormControlLabel required control={<Checkbox size={size} color={color} />} label="Required" />
-    <FormControlLabel disabled control={<Checkbox size={size} color={color} />} label="Disabled" />
+    <FormControlLabel control={<Checkbox defaultChecked size={size} color={color} />} label="ボックス1" />
+    <FormControlLabel control={<Checkbox defaultChecked size={size} color={color} />} label="ボックス2" />
+    <FormControlLabel control={<Checkbox defaultChecked size={size} color={color} />} label="ボックス3" />
+    
+    {/* <FormControlLabel required control={<Checkbox size={size} color={color} />} label="ボックス2" />
+    <FormControlLabel disabled control={<Checkbox size={size} color={color} />} label="ボックス3" /> */}
     </div>
   );
 }

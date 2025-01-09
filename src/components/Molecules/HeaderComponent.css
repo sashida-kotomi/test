@@ -1,0 +1,20 @@
+
+.header_container {
+  /* display: flex; */
+  /* align-items: center; */
+
+  border: 1px solid #000;
+  margin: 0 auto;
+  justify-content: space-between; /* メニューとログインを両端に配置 */
+  background-color: #fffff3;
+  padding: 30px;
+}
+
+.headeritem .menu {
+  display: flex;
+  gap: 30px;
+}
+
+.login {
+justify-content: flex-end;
+}

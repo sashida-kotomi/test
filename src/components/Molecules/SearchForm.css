@@ -1,0 +1,25 @@
+.item {
+  display: flex;
+  align-items: center;
+}
+h2 {
+  margin-right: 20px;
+}
+.container {
+  border: 1px solid #000;
+  
+}
+
+.button {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form {
+  display: flex;
+  border: 1px solid #000;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}

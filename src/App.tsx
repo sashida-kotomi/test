@@ -1,5 +1,6 @@
 // import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+// import './scss/style.scss'
 // import { Button2 } from './components/Atoms/button2'
 // import { Button3 } from './components/Atoms/button3'
 
@@ -27,8 +28,14 @@ import BasicModal from './components/Atoms/BasicModal'
 import AlertDialog from './components/Atoms/AlertDialog'
 import AccordionExpandIcon from './components/Atoms/BasicAccordion';
 import OutlinedCard from './components/Atoms/BasicCard';
+import SearchForm  from './components/Molecules/SearchForm';
+import HeaderComponents from './components/Molecules/HeaderComponents';
+import BasicTable from './components/Atoms/BasicTable';
+import TopPage from './pages/TopPage';
+import Signup from './pages/Signup';
+import DetailPage from './pages/DetailPage';
 
-
+import EditingPage from './pages/EditingPage';
 // import {useNavigate} from 'react-router-dom'
 
 
@@ -74,7 +81,7 @@ function App(){
 
      <div>
       <p>・ボタンコンポーネントの作成</p>
-      <BasicButton size="large" color="primary" />
+      <BasicButton size="large" color="primary" label='a' />
     </div>
 
     <div>
@@ -84,7 +91,7 @@ function App(){
 
     <div>
       <p>ラジオボタンコンポーネントの作成</p>
-      <RowRadioButtonsGroup size="large" color="primary" />
+      <RowRadioButtonsGroup size="small" color="primary" label='AAA' />
     </div>
 
     <div>
@@ -135,6 +142,29 @@ function App(){
     <div>
       <AccordionExpandIcon />
     </div>
+
+    <div>
+      <SearchForm />
+    </div>
+
+    {/* <div>
+      <HeaderComponents />
+    </div>
+
+    <div>
+      <BasicTable />
+    </div> */}
+
+    <div>
+      <TopPage />
+    </div>
+
+    <div>
+      <Signup />
+    </div>
+
+    <EditingPage />
+    <DetailPage />
 
 
     <Routes>

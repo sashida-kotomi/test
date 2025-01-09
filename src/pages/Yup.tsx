@@ -83,5 +83,5 @@ const ValidationHooksYup: React.FC = () => {
         </form>
     );
 };
-　
+
 export default ValidationHooksYup;

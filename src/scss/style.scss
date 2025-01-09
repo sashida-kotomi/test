@@ -6,3 +6,17 @@ body {
   background-color: $primary-color;
   color: white;
 }
+
+
+$spacing: 10px; 
+
+.container {
+  display: flex;           // 子要素を横並びにする
+  justify-content: space-between; 
+  gap: $spacing;           // 各アイテム間のスペースを調整
+
+  .item {
+    display: flex;        
+    align-items: center;   
+  }
+}
