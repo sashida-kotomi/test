@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
 type BasicMenuProps = {
   label: string;
@@ -38,9 +39,18 @@ export default function BasicMenu(props: BasicMenuProps) {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <Link to={'/'}>
+        <MenuItem onClick={handleClose}>一覧ページ</MenuItem>
+        </Link>
+        <Link to={'/DetailPage'}>
+        <MenuItem onClick={handleClose}>詳細ページ</MenuItem>
+        </Link>
+        <Link to={'/EditingPage'}>
+        <MenuItem onClick={handleClose}>編集ページ</MenuItem>
+        </Link>
+        <Link to={'/Signup'}>
+        <MenuItem onClick={handleClose}>登録ページ</MenuItem>
+        </Link>
       </Menu>
     </div>
   );

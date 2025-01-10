@@ -1,0 +1,40 @@
+/* アコーディオンのコンテナ */
+.accordion-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 各アコーディオン項目 */
+.accordion-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+
+}
+
+/* アコーディオンの見出し部分 */
+.accordion-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #ffb73a;
+  border-bottom: 1px solid #ddd;
+
+  .accordion-title {
+    font-size: 16px;
+  }
+
+}
+
+
+.accordion-details {
+  padding: 10px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+}

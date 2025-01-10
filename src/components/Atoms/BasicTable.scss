@@ -1,0 +1,30 @@
+.table-container {
+  margin: 20px;
+  padding: 10px;
+
+}
+
+.basic-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.basic-table th,
+.basic-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.basic-table th {
+  background-color: #ffd460;
+  color: rgb(118, 49, 15);
+}
+
+.basic-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.basic-table tr:hover {
+  background-color: #ddd;
+}

@@ -11,10 +11,9 @@ interface RadioButtonProps {
   color: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';  // MUIの色
   label1: string;
   label2: string;
-  label3: string;
 }
 export default function RowRadioButtonsGroup(props: RadioButtonProps) {
-  const { size, color , label1, label2, label3 } = props;
+  const { size, color , label1, label2 } = props;
 
   return (
     <FormControl>
@@ -26,7 +25,6 @@ export default function RowRadioButtonsGroup(props: RadioButtonProps) {
       >
         <FormControlLabel value="button1" control={<Radio size={size} color={color}/>} label={label1} />
         <FormControlLabel value="button2" control={<Radio  size={size} color={color}/>} label={label2} /> 
-        <FormControlLabel value="obutton3" control={<Radio  size={size} color={color}/>} label={label3} />
       </RadioGroup>
     </FormControl>
   );

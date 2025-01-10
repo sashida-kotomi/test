@@ -13,9 +13,9 @@ export default function BasicButton(props: BasicButtonProps) {
   return (
 
     <Stack spacing={2} direction="row">
-    {/* <Button variant="text" size={size} color={color}>Text</Button> */}
-    {/* <Button variant="contained" size={size} color={color}>Contained</Button> */}
-    <Button variant="outlined" size={size} color={color}>{label}</Button>
+    {/* <Button variant="text" size={size} color={color}>{label}</Button>  */}
+    <Button variant="contained" size={size} color={color}>{label}</Button>
+    {/* <Button variant="outlined" size={size} color={color}>{label}</Button> */}
     
   </Stack>
 

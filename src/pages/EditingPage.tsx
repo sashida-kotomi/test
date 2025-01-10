@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderComponents from '../components/Molecules/HeaderComponents';
 import BasicTextField from '../components/Atoms/BasicTextField';
 import BasicButton from '../components/Atoms/BasicButton';
+import { Link } from 'react-router-dom'
 
 
 export default function EditingPage() {
@@ -25,7 +26,9 @@ export default function EditingPage() {
       <BasicButton size="large" color="primary" label='編集する' />
     </div>
     <div className='button2'>
-      <BasicButton size="large" color="primary" label='一覧ページに戻る' />
+    <Link to={'/'}>
+    <BasicButton size="large" color="primary" label='一覧ページに戻る' />
+    </Link>
     </div>
     </div>
   )

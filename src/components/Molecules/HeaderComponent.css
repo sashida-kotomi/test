@@ -1,12 +1,9 @@
 
 .header_container {
-  /* display: flex; */
-  /* align-items: center; */
-
-  border: 1px solid #000;
+  width: 1000px;
   margin: 0 auto;
-  justify-content: space-between; /* メニューとログインを両端に配置 */
-  background-color: #fffff3;
+  justify-content: space-between; 
+  background-color: #b7c9ff;
   padding: 30px;
 }
 

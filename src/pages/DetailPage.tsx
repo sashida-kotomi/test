@@ -2,13 +2,15 @@ import React from 'react';
 import HeaderComponents from '../components/Molecules/HeaderComponents';
 import BasicButton from '../components/Atoms/BasicButton';
 import './DetailPage.css';
+import { Link } from 'react-router-dom';
 
 export default function DetailPage() {
   return(
     <div>
+      
       <HeaderComponents/>
-      <p>詳細ページ</p>
-        {/* ・検索結果項目の詳細を表示する */}
+      <h1>詳細ページ</h1>
+
         <table className='dessertdetail'>
           <tr>
             <th>Dessert:</th>
@@ -52,7 +54,9 @@ export default function DetailPage() {
 
 
       <div className='button2'>
-      <BasicButton size="large" color="primary" label='一覧ページに戻る' />
+      <Link to={'/'}>
+    <BasicButton size="large" color="primary" label='一覧ページに戻る' />
+    </Link>
     </div>
     </div>
 
