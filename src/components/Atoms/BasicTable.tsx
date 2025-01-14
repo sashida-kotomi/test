@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './BasicTable.scss';
 import BasicButton from './BasicButton';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function createData(
   name: string,
@@ -13,7 +13,8 @@ function createData(
   return { name, calories, fat, carbs, protein };
 }
 
-const rows = [
+// 初期データ
+const initialRows = [
   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
   // createData('Eclair', 262, 16.0, 24, 6.0),
@@ -26,6 +27,9 @@ interface BasicTableProps {
 }
 
 export default function BasicTable({ withCheckbox = false }: BasicTableProps) {
+  // 行の状態を管理
+  const [rows, setRows] = React.useState(initialRows);
+
   // チェックボックスの選択状態を管理
   const [selectedRows, setSelectedRows] = React.useState<Set<string>>(new Set());
 
@@ -38,6 +42,13 @@ export default function BasicTable({ withCheckbox = false }: BasicTableProps) {
       newSelectedRows.add(name);
     }
     setSelectedRows(newSelectedRows);
+  };
+
+  // 行を削除する関数
+  const handleDelete = (name: string) => {
+    // 削除する行を除いた新しい配列を作成
+    const newRows = rows.filter(row => row.name !== name);
+    setRows(newRows); // 更新された行を状態にセット
   };
 
   return (
@@ -53,6 +64,7 @@ export default function BasicTable({ withCheckbox = false }: BasicTableProps) {
             <th>Protein (g)</th>
             <th>編集</th>
             <th>詳細</th>
+            <th>削除</th>
           </tr>
         </thead>
         <tbody>
@@ -82,6 +94,14 @@ export default function BasicTable({ withCheckbox = false }: BasicTableProps) {
                 <Link to={row.name === 'Ice cream sandwich' ? '/DetailPage2' : '/DetailPage'}>
                   <BasicButton size="small" color="primary" label="詳細" />
                 </Link>
+              </td>
+              <td>
+                <BasicButton 
+                  size="small" 
+                  color="primary" 
+                  label="削除" 
+                  onClick={() => handleDelete(row.name)} // 削除処理を追加
+                />
               </td>
             </tr>
           ))}

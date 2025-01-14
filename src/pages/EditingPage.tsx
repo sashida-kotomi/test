@@ -11,7 +11,7 @@ export default function EditingPage() {
       <HeaderComponents />
       <h1>編集ページ</h1>
       <p>Dessert (100g serving)</p>
-      <BasicTextField color='primary' size='small'/>
+      <BasicTextField color='primary' size='small' />
       <p>Calories</p>
       <BasicTextField color='primary' size='small'/>
       <p>Fat (g)</p>

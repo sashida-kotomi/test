@@ -3,7 +3,7 @@
   width: 1000px;
   margin: 0 auto;
   justify-content: space-between; 
-  background-color: #b7c9ff;
+  background-color: #fff08f;
   padding: 30px;
 }
 
@@ -15,3 +15,4 @@
 .login {
 justify-content: flex-end;
 }
+

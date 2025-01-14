@@ -1,13 +1,41 @@
-
-
-.header  {
-  margin-bottom: 30px;
+.signup-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.main {
-margin-top: 50px;
+form {
+  display: flex;
+  flex-direction: column; /* 項目を縦に並べる */
+  gap: 20px; /* 各項目間の間隔 */
 }
 
-h1 {
-  font-size: 25px;
+.input-group {
+  display: flex;
+  flex-direction: column; /* ラベルと入力フィールドを縦に並べる */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 8px;
+  margin-top: 5px;
+  width: 100%; /* 入力フィールドが横幅に合わせて伸縮 */
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
 }

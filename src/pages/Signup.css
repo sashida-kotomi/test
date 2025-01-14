@@ -1,14 +1,43 @@
-.button1 {
-  margin-top: 20px;
-}
-.button2 {
-  margin-top: 20px;
+.signup-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.registration {
-  margin-top: 20px;
-  margin-bottom: 20px;
+form {
+  display: flex;
+  flex-direction: column;
 }
-h1 {
-  font-size: 25px;
+
+.form-row {
+  display: flex;
+  justify-content: space-between; /* 横並びにする */
+  gap: 20px; /* 各項目間のスペース */
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column; /* ラベルと入力フィールドを縦に並べる */
+  width: 18%; /* 各項目の幅 */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 8px;
+  margin-top: 5px;
+  width: 100%; /* 入力フィールドが横幅に合わせて伸縮 */
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f1e28b;
+  color: white;
+  border: none;
+  cursor: pointer;
 }

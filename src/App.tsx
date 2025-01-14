@@ -38,7 +38,7 @@ import DetailPage from './pages/DetailPage';
 import DetailPage2 from './pages/DetailPage2';
 
 import EditingPage from './pages/EditingPage';
-// import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 
 
@@ -71,107 +71,11 @@ import EditingPage from './pages/EditingPage';
 // };
 
 function App(){
+
+
   return(
   <div className = 'App'>
-{/* 
-     <ul>
-        <li> <a href='/'>Home</a></li>
-        <li> <a href='/about'>About</a></li>
-        <li> <a href='/contact'>Contact</a></li>
-     </ul>
-
-     <div>
-      <p>・ボタンコンポーネントの作成</p>
-      <BasicButton size="large" color="primary" label='a' />
-    </div>
-
-    <div>
-      <p>・チェックボックスコンポーネントの作成</p>
-      <CheckBox size="small" color="primary" />
-    </div>
-
-    <div>
-      <p>ラジオボタンコンポーネントの作成</p>
-      <RowRadioButtonsGroup size="small" color="primary" label='AAA' />
-    </div>
-
-    <div>
-      <p>スイッチコンポーネントの作成</p>
-      <SwitchLabel size="small" color="primary" />
-    </div>
-
-    <div>
-      <p>テキストフィールドの作成</p>
-      <BasicTextField size='large' color='primary' />
-    </div>
-
-    <div>
-      <p>ツールチップ</p>
-      <BasicTooltip />
-    </div>
-    <div>
-      <p>ページネーション</p>
-        <PaginationRounded />
-    </div>
-
-    <div>
-      <BasicModal/>
-    </div>
-
-    <div>
-      <p>ベーシックカード</p>
-      <OutlinedCard />
-    </div>
-
-    <div>
-      <CirclarIndeterminante />
-    </div>
-
-    <div>
-      <p>テーブル</p>
-      <BasicTable withCheckbox={true} />
-    </div>
-
-    <div>
-      <p>menu</p>
-      <BasicMenu label='メニュー' />
-    </div>
-
-    <div>
-      <BasicModal />
-    </div>
-
-    <div>
-      <AlertDialog />
-    </div>
-
-    <div>
-      <AccordionExpandIcon />
-    </div>
-
-    <div>
-      <SearchForm />
-    </div>
-
-    <div>
-      <HeaderComponents />
-    </div>
-
-    <div>
-    <BasicTable withCheckbox={true} />
-    </div>  */}
-
-    {/* <div>
-      <TopPage />
-    </div> */}
-
-    {/* <div>
-      <Signup />
-    </div>
-
-    <EditingPage />
-    <DetailPage />  */}
- 
+    
 <Routes>
       <Route>
           <Route path="/" element={<TopPage />} />     
