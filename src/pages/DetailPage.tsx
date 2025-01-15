@@ -3,42 +3,38 @@ import HeaderComponents from '../components/Molecules/HeaderComponents';
 import BasicButton from '../components/Atoms/BasicButton';
 import './DetailPage.css';
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; // useParams を使ってパラメータを取得
 
-export default function DetailPage() {
-  return(
+type User = {
+  id: number;
+  name: string;
+  age: number;
+};
+
+export default function DetailPage({ users }: { users: User[] }) {
+
+
+  const { id } = useParams(); // URLパラメータからidを取得
+  const user = users.find((user) => user.id === parseInt(id!));
+
+  if (!user) {
+    return <div>ユーザーが見つかりません。</div>;
+  }
+
+  return (
     <div>
-      
-      <HeaderComponents/>
-      <h1>詳細ページ</h1>
-
-        <table className='dessertdetail'>
-          <tr>
-            <th>Dessert:</th>
-            <td>Frozen yoghurt</td>
-          </tr>
-          <tr>
-            <th>Calories:</th>
-            <td>159</td>
-          </tr>
-          <tr>
-            <th>Fat (g):</th>
-            <td>6</td>
-          </tr>
-          <tr>
-            <th>Carbs (g):</th>
-            <td>24</td>
-          </tr>
-          <tr>
-            <th>Protein (g):</th>
-            <td>4</td>
-          </tr>
-        </table>
-         
-      <div className='button2'>
+      <HeaderComponents />
+      <h1>ユーザー詳細</h1>
+      <p>名前: {user.name}</p>
+      <p>年齢: {user.age}</p>
       <Link to={'/'}>
-    <BasicButton size="large" color="primary" label='一覧ページに戻る' />
-    </Link>
+      <BasicButton 
+      label='一覧ページに戻る'
+      type='button'
+      color='primary'
+      size='small'
+      />
+      </Link>
     </div>
-    </div>
-  )
+  );
 }

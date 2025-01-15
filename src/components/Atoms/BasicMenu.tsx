@@ -42,14 +42,8 @@ export default function BasicMenu(props: BasicMenuProps) {
         <Link to={'/'}>
         <MenuItem onClick={handleClose}>一覧ページ</MenuItem>
         </Link>
-        <Link to={'/DetailPage'}>
-        <MenuItem onClick={handleClose}>詳細ページ</MenuItem>
-        </Link>
-        <Link to={'/EditingPage'}>
-        <MenuItem onClick={handleClose}>編集ページ</MenuItem>
-        </Link>
         <Link to={'/Signup'}>
-        <MenuItem onClick={handleClose}>登録ページ</MenuItem>
+        <MenuItem onClick={handleClose}>新規登録ページ</MenuItem>
         </Link>
       </Menu>
     </div>

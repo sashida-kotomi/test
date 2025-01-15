@@ -11,9 +11,12 @@ export default function HeaderComponents() {
   <div className="headeritem">
     <div className="menu">
       <BasicMenu label="メニュー" />
+      <BasicButton size="small" color="primary" label="アイコン" />
+      <BasicButton size="small" color="primary" label="サブタイトル" />
 
-
-      <BasicButton size="small" color="primary" label="ログイン" type='button'  />
+    {/* <div className="login"> */}
+      <BasicButton size="small" color="primary" label="ログイン" />
+    {/* </div> */}
     </div>
   </div>
 </div>

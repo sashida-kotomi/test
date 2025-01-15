@@ -12,7 +12,7 @@ type BasicTextFieldProps = {
 }
 
 export default function BasicTextField (props: BasicTextFieldProps) {
-  const { size, color,value,type,label,onChange } = props;
+  const { size, color,value,type,label ,onChange } = props;
 
   return(
     <Box

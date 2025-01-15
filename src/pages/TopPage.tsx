@@ -17,13 +17,13 @@ export default function TopPage () {
       </div>
       <div className='main'>
         <h1>一覧画面</h1>
-        <SearchForm />
+        {/* <SearchForm /> */}
         <BasicTable />
       </div>
 
       <div className='registration'>
       <Link to={'/Signup'}>
-      <BasicButton size="large" color="primary" label='新規登録' />
+      <BasicButton size="large" color="primary" label='新規登録' type="button" />
       </Link>
       </div>
 

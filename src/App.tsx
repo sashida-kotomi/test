@@ -39,6 +39,7 @@ import DetailPage2 from './pages/DetailPage2';
 
 import EditingPage from './pages/EditingPage';
 import {useNavigate} from 'react-router-dom'
+import  { useState } from 'react';
 
 
 
@@ -69,9 +70,27 @@ import {useNavigate} from 'react-router-dom'
 // </div>
 //   );
 // };
+type User = {
+  id: number;
+  name: string;
+  age: number;
+};
 
-function App(){
+export default function App(){
 
+  const [searchTerm, setSearchTerm] = useState<string>('');
+// 最初のデータ
+const initialData: User[] = [
+  { id: 1, name: "山田太郎", age: 25 },
+  { id: 2, name: "鈴木一郎", age: 30 },
+  { id: 3, name: "佐藤花子", age: 28 },
+];
+const handleSearch = (term: string) => {
+  setSearchTerm(term);
+};
+
+
+const [data, setData] = useState<User[]>(initialData); // 状態を管理
 
   return(
   <div className = 'App'>
@@ -79,10 +98,10 @@ function App(){
 <Routes>
       <Route>
           <Route path="/" element={<TopPage />} />     
-          <Route path="/DetailPage" element={<DetailPage />} /> 
-          <Route path="/DetailPage2" element={<DetailPage2 />} /> 
+          <Route path="/detail/:id" element={<DetailPage users={data} />} />
           <Route path="/Signup" element={<Signup />} /> 
-          <Route path="/EditingPage" element={<EditingPage />} />  
+          <Route path="/edit/:id" element={<EditingPage />} />  {/* 編集ページに遷移 */}
+          {/* <Route path="/edit/:id" element={<BasicTable data={data} setData={setData} />} /> */}
       </Route>
 </Routes>
 
@@ -91,4 +110,3 @@ function App(){
 );
 }
 
-export default App;
