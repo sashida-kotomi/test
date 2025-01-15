@@ -35,7 +35,7 @@ export default function DetailPage() {
         </table>
       <div className='button2'>
       <Link to={'/'}>
-    <BasicButton size="large" color="primary" label='一覧ページに戻る' />
+    <BasicButton type='button' size="large" color="primary" label='一覧ページに戻る' />
     </Link>
     </div>
     </div>

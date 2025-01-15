@@ -6,13 +6,12 @@ type BasicTextFieldProps = {
   size: 'small' | 'large';
   color: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'; 
   value:string;
-  label:string;
   type: 'string' | 'number';
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function BasicTextField (props: BasicTextFieldProps) {
-  const { size, color,value,type,label ,onChange } = props;
+  const { size, color,value,type ,onChange } = props;
 
   return(
     <Box
@@ -22,7 +21,7 @@ export default function BasicTextField (props: BasicTextFieldProps) {
     noValidate
     autoComplete="off"
     >
-      <TextField id='outlined-basic' type={type} label='' variant='outlined' size={size} color={color} value={value}   onChange={onChange}/>
+      <TextField id='outlined-basic' type={type}  variant='outlined' size={size} color={color} value={value}   onChange={onChange}/>
       {/* <TextField id='filled-basic' label='Filled' variant='filled' size={size} color={color}/>
       <TextField id='standard-basic' label='Standard' variant='standard' size={size} color={color}/> */}
     </Box>

@@ -1,220 +1,60 @@
-// import React, { useState } from 'react';
-// import BasicTextField from '../components/Atoms/BasicTextField';
-// import BasicButton from '../components/Atoms/BasicButton';
-// import HeaderComponents from '../components/Molecules/HeaderComponents';
-// import BasicTable from '../components/Atoms/BasicTable';
-// import './Signup.css';
-
-// export default function Signup() {
-//   const [dessert, setDessert] = useState('');
-//   const [calories, setCalories] = useState('');
-//   const [fat, setFat] = useState('');
-//   const [carbs, setCarbs] = useState('');
-//   const [protein, setProtein] = useState('');
-  
-//   const [rows, setRows] = useState([]); // テーブルの行を管理する状態
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // 新しい行を作成
-//     const newRow = {
-//       name: dessert,
-//       calories: parseInt(calories),
-//       fat: parseFloat(fat),
-//       carbs: parseFloat(carbs),
-//       protein: parseFloat(protein),
-//     };
-//     setRows([...rows, newRow]); // 新しい行を追加
-//     // フォームをリセット
-//     setDessert('');
-//     setCalories('');
-//     setFat('');
-//     setCarbs('');
-//     setProtein('');
-//   };
-
-//   return (
-//     <div className="signup-container">
-//       <HeaderComponents />
-//       <h2>Sign Up Form</h2>
-//       <form onSubmit={handleSubmit}>
-//         <div className="input-group">
-//           <label>Dessert (100g serving)</label>
-//           <BasicTextField
-//             size='small'
-//             color='primary'
-//             label='Dessert'
-//             type="string"
-//             value={dessert}
-//             onChange={(e) => setDessert(e.target.value)}
-//           />
-//         </div>
-
-//         <div className="input-group">
-//           <label>Calories</label>
-//           <BasicTextField
-//             size='small'
-//             color='primary'
-//             label='Calories'
-//             type="number"
-//             value={calories}
-//             onChange={(e) => setCalories(e.target.value)}
-//           />
-//         </div>
-
-//         <div className="input-group">
-//           <label>Fat (g)</label>
-//           <BasicTextField
-//             size='small'
-//             color='primary'
-//             type="number"
-//             value={fat}
-//             label='Fat'
-//             onChange={(e) => setFat(e.target.value)}
-//           />
-//         </div>
-
-//         <div className="input-group">
-//           <label>Carbs (g)</label>
-//           <BasicTextField
-//             size='small'
-//             color='primary'
-//             label='Carbs'
-//             type="number"
-//             value={carbs}
-//             onChange={(e) => setCarbs(e.target.value)}
-//           />
-//         </div>
-
-//         <div className="input-group">
-//           <label>Protein (g)</label>
-//           <BasicTextField
-//             size='small'
-//             color='primary'
-//             label='Protein'
-//             type="number"
-//             value={protein}
-//             onChange={(e) => setProtein(e.target.value)}
-//           />
-//         </div>
-        
-//         <BasicButton size='small' color='primary' type="submit" label='新規登録'/>
-//       </form>
-
-//       {/* BasicTableにrowsを渡してテーブルを表示 */}
-//       <BasicTable rows={rows} />
-//     </div>
-//   );
-// }
 import React, { useState } from 'react';
-import BasicTextField from '../components/Atoms/BasicTextField';
+import { useNavigate } from 'react-router-dom'; 
 import BasicButton from '../components/Atoms/BasicButton';
-import HeaderComponents from '../components/Molecules/HeaderComponents';
-import BasicTable from '../components/Atoms/BasicTable';
-import './Signup.css';
+import BasicTextField from '../components/Atoms/BasicTextField';
+import HeaderComponents from '../components/Molecules/HeaderComponents'
 
-export default function Signup() {
-  const [dessert, setDessert] = useState('');
-  const [calories, setCalories] = useState('');
-  const [fat, setFat] = useState('');
-  const [carbs, setCarbs] = useState('');
-  const [protein, setProtein] = useState('');
-  
-  const [rows, setRows] = useState([]); // テーブルの行を管理する状態
+type SignupProps = {
+  onAddUser: (name: string, age: number) => void;
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const Signup: React.FC<SignupProps> = ({ onAddUser }) => {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const navigate = useNavigate();
 
-    // 新しい行を作成
-    const newRow = {
-      name: dessert,
-      calories: parseInt(calories),
-      fat: parseFloat(fat),
-      carbs: parseFloat(carbs),
-      protein: parseFloat(protein),
-    };
-
-    // 新しい行をテーブルに追加
-    setRows([...rows, newRow]);
-
-    // フォームをリセット
-    setDessert('');
-    setCalories('');
-    setFat('');
-    setCarbs('');
-    setProtein('');
+  const handleSubmit = () => {
+    if (!name || !age) {
+      alert('名前と年齢を入力してください');
+      return;
+    }
+    onAddUser(name, Number(age)); // 新しいユーザーを追加
+    navigate('/'); // ユーザー追加後にホーム（TopPage）に遷移
   };
 
   return (
-    <div className="signup-container">
+    <div>
       <HeaderComponents />
-      <h2>Sign Up Form</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <label>Dessert (100g serving)</label>
-          <BasicTextField
-            size="small"
-            color="primary"
-            label="Dessert"
-            type="string"
-            value={dessert}
-            onChange={(e) => setDessert(e.target.value)}
-          />
-        </div>
-
-        <div className="input-group">
-          <label>Calories</label>
-          <BasicTextField
-            size="small"
-            color="primary"
-            label="Calories"
-            type="number"
-            value={calories}
-            onChange={(e) => setCalories(e.target.value)}
-          />
-        </div>
-
-        <div className="input-group">
-          <label>Fat (g)</label>
-          <BasicTextField
-            size="small"
-            color="primary"
-            type="number"
-            value={fat}
-            label="Fat"
-            onChange={(e) => setFat(e.target.value)}
-          />
-        </div>
-
-        <div className="input-group">
-          <label>Carbs (g)</label>
-          <BasicTextField
-            size="small"
-            color="primary"
-            label="Carbs"
-            type="number"
-            value={carbs}
-            onChange={(e) => setCarbs(e.target.value)}
-          />
-        </div>
-
-        <div className="input-group">
-          <label>Protein (g)</label>
-          <BasicTextField
-            size="small"
-            color="primary"
-            label="Protein"
-            type="number"
-            value={protein}
-            onChange={(e) => setProtein(e.target.value)}
-          />
-        </div>
-        
-        <BasicButton size="small" color="primary" type="submit" label="新規登録" />
-      </form>
-
-      {/* BasicTableにrowsを渡してテーブルを表示 */}
-      <BasicTable rows={rows} />
+      <h1>新規登録</h1>
+      <div>
+        <p>登録する名前を入力してください！</p>
+        <BasicTextField 
+          type='string'
+          size="small"
+          color="primary"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <div>
+        <p>年齢を入力してください！</p>
+        <BasicTextField 
+          size="small"
+          color="primary"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+          type="number"
+        />
+      </div>
+      <BasicButton 
+        size="small"
+        color="primary"
+        label="登録"
+        onClick={handleSubmit}
+        type="button"
+      />
     </div>
   );
-}
+};
+
+export default Signup;
